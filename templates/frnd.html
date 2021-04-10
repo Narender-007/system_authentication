@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+		<title>Friend Requests</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href={% static 'assets/css/main.css'%}/>
+        <link rel="stylesheet" type="text/css" href={% static  'assets/css/font-awesome.min.css'%}/>
+</head>
+<body>
+<header id="header" class="alt">
+				<div class="logo"><a href="/uhome/">Deep Learning Based Attack on Social Authentication System</a></div>
+				<a href="#menu">Menu</a>
+			</header>
+    <nav id="menu">
+		<ul class="links">
+            <li><a href="/uhome/">Home</a></li>
+            <li><a href="/search/">Search Friend</a></li>
+            <li><a href="/frnd/">Friend Request</a></li>
+			<li><a href="/upload/">Send Message</a></li>
+			<li><a href="/msg/">Messages</a>
+            <li><a href="/logout/">Logout</a></li>
+		</ul>
+	</nav>
+    <section class="banner full">
+		<article>
+			<img src="{% static 'slide04.jpg' %}"  alt="" />
+			<div class="inner">
+			<header>
+				<h2><strong>Friends Requests</strong></h2>
+                    <table>
+                        <tr>
+                            <th>
+                                From
+                            </th>
+                            <th>
+                                Approve
+                            </th>
+                            <th>
+                                Reject
+                            </th>
+                        </tr>
+                        {%  for r in result %}
+                        <tr>
+                            <td>
+                                {{ r.0 }}
+                            </td>
+                            <td>
+                                <form name = "form" action = "/approve/"
+                                            method = "POST" >{% csrf_token %}
+                                        <input type="hidden" name="fid" value="{{ r.3 }}"><input type="submit" value="Approve">
+                                </form>
+                            </td>
+                            <td>
+                                <form name = "form" action = "/reject/"
+                                            method = "POST" >{% csrf_token %}
+                                        <input type="hidden" name="fid" value="{{ r.3 }}"><input type="submit" value="Reject">
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+			</header>
+			</div>
+		</article>
+	</section>
+            <script src="{% static 'assets/js/jquery.min.js'%}"></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>

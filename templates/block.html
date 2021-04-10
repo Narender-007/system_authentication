@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+{% load static %}
+		<title>User Login</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href={% static 'assets/css/main.css'%}/>
+
+</head>
+<body>
+<header id="header" class="alt">
+				<div class="logo"><a href="/'home/">Deep Learning Based Attack on Social Authentication System</a></div>
+				<a href="#menu">Menu</a>
+			</header>
+    <nav id="menu">
+				<ul class="links">
+					<li><a href="/home/">Home</a></li>
+					<li><a href="/log/">Login</a></li>
+					<li><a href="/reg/">New User</a></li>
+				</ul>
+			</nav>
+<section class="banner full">
+
+				<article>
+					<img src="{% static 'slide04.jpg' %}"  alt="" />
+                    <div class="inner">
+						<header>
+                    <h3><strong>Now User is Blocked</strong></h3>
+						</header>
+					</div>
+				</article>
+			</section>
+            <script src="{% static 'assets/js/jquery.min.js'%}"></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>

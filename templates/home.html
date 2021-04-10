@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+		<title>Registration</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href={% static 'assets/css/main.css'%}/>
+        <link rel="stylesheet" type="text/css" href={% static  'assets/css/font-awesome.min.css'%}/>
+</head>
+<body>
+<header id="header" class="alt">
+				<div class="logo"><a href="/home/">Deep Learning Based Attack on Social Authentication System</a></div>
+				<a href="#menu">Menu</a>
+			</header>
+    <nav id="menu">
+				<ul class="links">
+					<li><a href="/home/">Home</a></li>
+					<li><a href="/log/">Login</a></li>
+					<li><a href="/reg/">New User</a></li>
+				</ul>
+			</nav>
+    <section class="banner full">
+		<article>
+			<img src="{% static 'slide04.jpg' %}"  alt="" />
+			<div class="inner">
+			<header>
+				<h1><strong>Register</strong></h1>
+                    <form name = "form" action = "/reg1/"
+                         method = "POST" >{% csrf_token %}
+                         <div >
+                            <center>
+                               <input type = "text"
+                                  placeholder = "Name" name = "name" />
+                            </center>
+                         </div>
+                         <br>
+                         <div >
+                            <center>
+                               <input type = "text"
+                                  placeholder = "Email" name = "uname" />
+                            </center>
+                         </div>
+                         <br>
+                         <div >
+                            <center>
+                               <input type = "password"
+                                  placeholder = "Password" name = "password" />
+                            </center>
+                         </div>
+                         <br>
+                         <div >
+                            <center>
+                               <input type = "text"
+                                  placeholder = "Mobile" name = "mob" />
+                            </center>
+                         </div>
+                         <br>
+                         <div >
+                            <center>
+                               <input type="radio" id="Male" name="gen" value="Male" >
+											<label for="Male" style="color: white;">Male</label>
+                               <input type="radio" id="Female" name="gen" value="Female" >
+											<label for="Female" style="color: white;">Female</label>
+                            </center>
+                         </div>
+                         <br>
+                         <div >
+                            <center>
+                               <input type = "text"
+                                  placeholder = "Location" name = "loc" />
+                            </center>
+                         </div>
+                         <br>
+                         <div >
+                            <center>
+                                <button style = "border:0px; background-color:#4285F4; width: 100px; height: 50px;" type = "submit"
+                                  value = "Login" >
+                                  <strong>Login</strong>
+                                </button>
+                            </center>
+                         </div>
+                    </form>
+			</header>
+			</div>
+		</article>
+	</section>
+            <script src="{% static 'assets/js/jquery.min.js'%}"></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>

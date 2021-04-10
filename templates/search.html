@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+		<title>Search Friend</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href={% static 'assets/css/main.css'%}/>
+        <link rel="stylesheet" type="text/css" href={% static  'assets/css/font-awesome.min.css'%}/>
+</head>
+<body>
+<header id="header" class="alt">
+				<div class="logo"><a href="/uhome/">Deep Learning Based Attack on Social Authentication System</a></div>
+				<a href="#menu">Menu</a>
+			</header>
+    <nav id="menu">
+		<ul class="links">
+            <li><a href="/uhome/">Home</a></li>
+            <li><a href="/search/}">Search Friend</a></li>
+            <li><a href="/frnd/">Friend Request</a></li>
+			<li><a href="/upload/">Send Message</a></li>
+			<li><a href="/msg/">Messages</a>
+            <li><a href="/logout/">Logout</a></li>
+		</ul>
+	</nav>
+    <section class="banner full">
+    	<article>
+	    	<img src="{% static 'slide04.jpg' %}"  alt="" />
+			<div class="inner">
+				<header>
+					<h2><strong>Search Friends</strong></h2>
+                        <form name = "form" action = "/sea/"
+                             method = "POST" >{% csrf_token %}
+                        <table>
+                            <tr>
+                                <td>
+                                    Enter Name
+                                </td>
+                                <td>
+                                    Search
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" name="frnd">
+                                </td>
+                                <td>
+                                    <input type="submit" value="Search Friend">
+                                </td>
+                            </tr>
+                        </table>
+                        </form>
+				</header>
+			</div>
+		</article>
+	</section>
+            <script src="{% static 'assets/js/jquery.min.js'%}"></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>
